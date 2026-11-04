@@ -1,0 +1,236 @@
+/* Visual theme layer. Loaded after each page's own styles, so it overrides them.
+   To turn the whole theme off, remove the theme.css and theme.js lines from a page's <head>. */
+
+:root {
+  --accent: #E3873C;
+  --accent-soft: rgba(227, 135, 60, 0.45);
+  --line: rgba(255, 255, 255, 0.12);
+  --mono: "IBM Plex Mono", ui-monospace, "SF Mono", Menlo, Consolas, monospace;
+  /* Side gutter: 40px minimum, and content stops at 1200px wide on big screens */
+  --g: max(40px, calc((100% - 1200px) / 2));
+}
+
+html { scroll-behavior: smooth; }
+body { counter-reset: sec; }
+
+/* ---------- Top bar ---------- */
+.bar {
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px 24px;
+  flex-wrap: wrap;
+  padding: 12px var(--g);
+  background: rgba(10, 31, 68, 0.94);
+  -webkit-backdrop-filter: blur(8px);
+  backdrop-filter: blur(8px);
+  border-bottom: 1px solid var(--line);
+}
+.bar .brand {
+  color: #FFFFFF;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 1.05rem;
+}
+.bar-home { justify-content: flex-end; }
+.bar-home .brand { display: none; }
+.bar-links {
+  display: flex;
+  align-items: center;
+  gap: 8px 22px;
+  flex-wrap: wrap;
+  font-size: 0.95rem;
+}
+.bar-links a {
+  color: #FFFFFF;
+  text-decoration: none;
+  opacity: 0.85;
+  transition: color 0.2s, opacity 0.2s, background 0.2s;
+}
+.bar-links a:hover { opacity: 1; color: var(--accent); }
+.bar-links a[aria-current="page"] {
+  opacity: 1;
+  border-bottom: 2px solid var(--accent);
+  padding-bottom: 2px;
+}
+.bar-links a.btn {
+  opacity: 1;
+  color: var(--accent);
+  border: 1px solid var(--accent);
+  padding: 6px 14px;
+  border-radius: 6px;
+}
+.bar-links a.btn:hover { background: var(--accent); color: #0A1F44; }
+
+/* ---------- Headings ---------- */
+h2 { font-size: clamp(1.75rem, 3.6vw, 2.75rem); }
+.overview .title { font-size: clamp(1.6rem, 3.4vw, 2.5rem); }
+.section h2 { font-size: clamp(1.5rem, 3vw, 2.25rem); }
+.row h3 { font-size: clamp(1.4rem, 2.6vw, 2rem); }
+
+/* Small numbered label above each section title, and a short accent rule below it */
+.section h2::before,
+.design .row h3::before {
+  counter-increment: sec;
+  content: counter(sec, decimal-leading-zero);
+  display: block;
+  margin-bottom: 10px;
+  font-family: var(--mono);
+  font-size: 0.8rem;
+  font-weight: 500;
+  letter-spacing: 0.14em;
+  line-height: 1;
+  color: var(--accent);
+}
+.section h2::after,
+.design .row h3::after {
+  content: "";
+  display: block;
+  width: 48px;
+  height: 2px;
+  margin-top: 14px;
+  background: var(--accent);
+}
+
+/* ---------- Content width and spacing ---------- */
+.overview { padding-left: var(--g); padding-right: var(--g); }
+.hotfires-head { padding-left: var(--g); padding-right: var(--g); }
+.design > h2 { padding-left: var(--g); padding-right: var(--g); }
+.design .row { padding-left: var(--g); padding-right: var(--g); }
+
+.section {
+  position: relative;
+  padding: 64px var(--g) 8px;
+}
+.overview + .section { padding-top: 48px; }
+.section::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: var(--g);
+  right: var(--g);
+  height: 1px;
+  background: var(--line);
+}
+.overview + .section::before { display: none; }
+
+/* ---------- Hotfire timeline ---------- */
+.timeline { padding-left: var(--g); padding-right: var(--g); }
+.timeline::before {
+  left: var(--g);
+  right: var(--g);
+  background: var(--accent-soft);
+}
+.tl-item::before { background: var(--accent); }
+.tl-item .date {
+  font-family: var(--mono);
+  font-weight: 500;
+  letter-spacing: 0.02em;
+  font-size: clamp(1.1rem, 2vw, 1.4rem);
+}
+.video {
+  border-radius: 8px;
+  overflow: hidden;
+  border: 1px solid var(--line);
+  box-sizing: border-box;
+}
+
+/* ---------- Images ---------- */
+.media img,
+.media video {
+  border-radius: 8px;
+  border: 1px solid var(--line);
+  box-sizing: border-box;
+}
+.media.card img {
+  background: #FFFFFF;
+  padding: 14px;
+}
+.cap {
+  display: block;
+  margin-top: 10px;
+  font-size: 0.82rem;
+  line-height: 1.4;
+  color: rgba(255, 255, 255, 0.58);
+}
+
+/* ---------- Links ---------- */
+.pubs a {
+  color: var(--accent);
+  text-decoration-color: var(--accent-soft);
+  text-underline-offset: 3px;
+}
+.pubs a:hover { text-decoration-color: var(--accent); }
+.pubs .tag,
+.pubs .venue { font-family: var(--mono); font-size: 0.78em; letter-spacing: 0.02em; }
+.pub-group {
+  font-family: var(--mono);
+  font-size: 0.85rem;
+  font-weight: 500;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--accent);
+}
+.footer a { transition: color 0.2s; }
+.footer a:hover { color: var(--accent); }
+
+/* ---------- Home: project cards ---------- */
+#rde, #ucirpl { background-image: none; }
+.panel .bg {
+  position: absolute;
+  top: 0; right: 0; bottom: 0; left: 0;
+  background-size: cover;
+  background-position: center;
+  transition: transform 0.6s ease;
+}
+#rde .bg { background-image: url("rde.jpg"); }
+#ucirpl .bg { background-image: url("ucirpl.jpg"); }
+.panel::before { z-index: 1; transition: background 0.3s; }
+.panel span { z-index: 2; }
+.panel::after {
+  content: "";
+  position: absolute;
+  top: 0; right: 0; bottom: 0; left: 0;
+  z-index: 3;
+  pointer-events: none;
+  box-shadow: inset 0 0 0 0 var(--accent);
+  transition: box-shadow 0.25s;
+}
+.panel:hover { opacity: 1; }
+.panel:hover .bg { transform: scale(1.05); }
+.panel:hover::before { background: rgba(0, 0, 0, 0.32); }
+.panel:hover::after { box-shadow: inset 0 0 0 4px var(--accent); }
+.panel span small {
+  display: block;
+  margin-top: 10px;
+  font-size: clamp(1rem, 1.6vw, 1.3rem);
+  font-weight: 500;
+}
+.about h2::after {
+  content: "";
+  display: block;
+  width: 48px;
+  height: 2px;
+  margin: 14px auto 0;
+  background: var(--accent);
+}
+
+/* ---------- Fade-in on scroll (only active when theme.js runs) ---------- */
+html.js .reveal {
+  opacity: 0;
+  transform: translateY(16px);
+  transition: opacity 0.7s ease, transform 0.7s ease;
+}
+html.js .reveal.in { opacity: 1; transform: none; }
+
+@media (max-width: 800px) {
+  .bar { position: static; }
+}
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  html.js .reveal { opacity: 1; transform: none; transition: none; }
+  .panel .bg, .panel::before, .panel::after { transition: none; }
+}
