@@ -357,3 +357,28 @@ h1 { padding-top: clamp(28px, 3.5vw, 48px); }
 .tagline { padding-bottom: clamp(20px, 2.5vw, 32px); }
 .panel { aspect-ratio: auto; height: clamp(420px, calc(100svh - 240px), 760px); }
 @media (max-width: 700px) { .panel { height: auto; aspect-ratio: 4 / 3; } }
+
+/* Home: tall cards, titles float with the scroll then settle at the card bottom.
+   Delete this block (and the "fit the viewport" block above it) to undo. */
+.panel {
+  height: auto;
+  aspect-ratio: 4 / 5;
+  overflow: clip;
+  display: flex;
+  align-items: flex-end;
+}
+.panel span {
+  position: sticky;
+  top: auto;
+  left: auto;
+  right: auto;
+  bottom: clamp(24px, 4vw, 48px);
+  transform: none;
+  box-sizing: border-box;
+  width: 100%;
+  margin-bottom: clamp(24px, 4vw, 48px);
+  padding: 0 clamp(24px, 4vw, 48px);
+}
+@media (max-width: 700px) { .panel { aspect-ratio: 4 / 3; } }
+.panel span small { text-shadow: 0 1px 10px rgba(0, 0, 0, 0.95), 0 0 3px rgba(0, 0, 0, 0.8); }
+.panel span { text-shadow: 0 2px 16px rgba(0, 0, 0, 0.8); }
