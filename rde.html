@@ -91,13 +91,13 @@
     font-size: 1.25rem;
   }
   /* Images alternate between the left edge and the right edge */
-  .s1 .media, .s3 .media { margin-left: 0; margin-right: auto; }
+  .s1 .media, .s3 .media, .s5 .media { margin-left: 0; margin-right: auto; }
   .s2 .media, .s4 .media { margin-left: auto; margin-right: 0; }
-  .s2 .media.portrait { width: 22%; }
+  .media.portrait { width: 22%; }
   .end { height: 64px; }
 
   @media (max-width: 800px) {
-    .media, .s2 .media.portrait { width: 100%; margin-left: 0; }
+    .media, .media.portrait { width: 100%; margin-left: 0; }
   }
 </style>
 </head>
@@ -116,25 +116,31 @@
   </section>
 
   <section class="section s1">
-    <h2>[Section 1]</h2>
-    <p class="detail">[Description]</p>
-    <div class="media"><video src="rde-clip-1.mp4" autoplay muted loop preload="auto" playsinline></video></div>
-  </section>
-
-  <section class="section s2">
-    <h2>[Section 2]</h2>
-    <p class="detail">[Description]</p>
-    <div class="media portrait"><video src="rde-clip-2.mp4" autoplay muted loop preload="auto" playsinline></video></div>
-  </section>
-
-  <section class="section s3">
-    <h2>[Section 3]</h2>
+    <h2>Initial Design</h2>
     <p class="detail">[Description]</p>
     <div class="media"><div class="ph">[Image placeholder]</div></div>
   </section>
 
+  <section class="section s2">
+    <h2>Facility Design</h2>
+    <p class="detail">[Description]</p>
+    <div class="media"><div class="ph">[Image placeholder]</div></div>
+  </section>
+
+  <section class="section s3">
+    <h2>First Hotfire</h2>
+    <p class="detail">[Description]</p>
+    <div class="media portrait"><video src="rde-clip-2.mp4" autoplay muted loop preload="auto" playsinline></video></div>
+  </section>
+
   <section class="section s4">
-    <h2>[Section 4]</h2>
+    <h2>Collecting Data</h2>
+    <p class="detail">[Description]</p>
+    <div class="media"><video src="rde-clip-1.mp4" autoplay muted loop preload="auto" playsinline></video></div>
+  </section>
+
+  <section class="section s5">
+    <h2>Publications</h2>
     <p class="detail">[Description]</p>
     <div class="media"><div class="ph">[Image placeholder]</div></div>
   </section>
