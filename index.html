@@ -23,6 +23,17 @@
     color: inherit;
     text-decoration: none;
   }
+  .links {
+    display: flex;
+    justify-content: center;
+    gap: 32px;
+    padding: 0 24px 32px;
+    font-size: 1.1rem;
+  }
+  .links a {
+    color: #FFFFFF;
+    text-decoration: underline;
+  }
   .panels {
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -44,8 +55,10 @@
   .panel span {
     position: absolute;
     left: 24px;
-    bottom: 24px;
     right: 24px;
+    top: 50%;
+    transform: translateY(-50%);
+    text-align: center;
     font-size: 1.25rem;
     font-weight: 600;
   }
@@ -65,8 +78,12 @@
 </head>
 <body>
   <h1><a href="./">Diego Kiyoshi Menendez</a></h1>
+  <nav class="links">
+    <a href="#">LinkedIn</a>
+    <a href="#">Resume (PDF)</a>
+  </nav>
   <div class="panels">
-    <a class="panel" id="rde" href="#"><span>2in Rotating detonation Engine</span></a>
+    <a class="panel" id="rde" href="#"><span>X Energy Lab - 2in Rotating Detonation Engine</span></a>
     <a class="panel" id="ucirpl" href="ucirpl.html"><span>UCI Rocket Project Liquids - MOCH4</span></a>
   </div>
 </body>
