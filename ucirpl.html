@@ -111,34 +111,41 @@
     line-height: 1.5;
   }
   .row .detail-list li { margin-bottom: 6px; }
-  .hf {
-    display: flex;
-    align-items: center;
-    padding: 12px 40px;
+  .timeline {
+    position: relative;
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 24px;
+    padding: 16px 40px 8px;
   }
-  .hf .date {
-    margin: 0;
-    font-size: clamp(1.75rem, 4vw, 3rem);
-    font-weight: 600;
-    line-height: 1.1;
-    white-space: nowrap;
-  }
-  .hf .line {
-    flex: 1;
+  .timeline::before {
+    content: "";
+    position: absolute;
+    left: 40px;
+    right: 40px;
+    top: 22px;
     height: 1px;
     background: #FFFFFF;
-    margin-left: 24px;
-    margin-right: 24px;
   }
-  .hf .video {
-    flex: none;
-    width: 300px;
+  .tl-item {
+    position: relative;
+    padding-top: 22px;
   }
-  /* Staggered: each video's right edge sits 24px left of the left edge of the video below it */
-  .hf:nth-last-of-type(2) { padding-right: 364px; }
-  .hf:nth-last-of-type(3) { padding-right: 688px; }
-  @media (max-width: 1400px) {
-    .hf:nth-last-of-type(2), .hf:nth-last-of-type(3) { padding-right: 40px; }
+  .tl-item::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 13px;
+    height: 13px;
+    border-radius: 50%;
+    background: #FFFFFF;
+  }
+  .tl-item .date {
+    margin: 0 0 12px;
+    font-size: clamp(1.25rem, 2.4vw, 1.9rem);
+    font-weight: 600;
+    line-height: 1.1;
   }
   .video {
     aspect-ratio: 16 / 9;
@@ -172,9 +179,10 @@
 
   @media (max-width: 800px) {
     .row { grid-template-columns: minmax(0, 1fr); }
-    .hf { flex-direction: column; align-items: stretch; gap: 12px; }
-    .hf .line { display: none; }
-    .hf .video { width: 100%; }
+    .timeline { grid-template-columns: minmax(0, 1fr); gap: 32px; }
+    .timeline::before { display: none; }
+    .tl-item { padding-top: 0; padding-left: 24px; border-left: 1px solid #FFFFFF; }
+    .tl-item::before { top: 4px; left: -7px; }
     .design .row > div:first-child { padding-right: 0; }
   }
   .footer {
@@ -211,22 +219,19 @@
       <p class="role-line">Testing role: Bottle operator</p>
     </div>
 
-    <div class="hf">
-      <h3 class="date">March 2025</h3>
-      <div class="line"></div>
-      <div class="video"><video src="hotfire-1.mp4" autoplay muted loop preload="auto" playsinline></video></div>
-    </div>
-
-    <div class="hf">
-      <h3 class="date">May 2025</h3>
-      <div class="line"></div>
-      <div class="video"><video src="hotfire-2.mp4" autoplay muted loop preload="auto" playsinline></video></div>
-    </div>
-
-    <div class="hf">
-      <h3 class="date">December 2025</h3>
-      <div class="line"></div>
-      <div class="video"><video src="hotfire-3.mp4" autoplay muted loop preload="auto" playsinline></video></div>
+    <div class="timeline">
+      <div class="tl-item">
+        <h3 class="date">March 2025</h3>
+        <div class="video"><video src="hotfire-1.mp4" autoplay muted loop preload="auto" playsinline></video></div>
+      </div>
+      <div class="tl-item">
+        <h3 class="date">May 2025</h3>
+        <div class="video"><video src="hotfire-2.mp4" autoplay muted loop preload="auto" playsinline></video></div>
+      </div>
+      <div class="tl-item">
+        <h3 class="date">December 2025</h3>
+        <div class="video"><video src="hotfire-3.mp4" autoplay muted loop preload="auto" playsinline></video></div>
+      </div>
     </div>
   </section>
 
