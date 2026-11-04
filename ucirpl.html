@@ -104,6 +104,13 @@
     font-size: clamp(1rem, 1.7vw, 1.25rem);
     line-height: 1.5;
   }
+  .row .detail-list {
+    margin: 8px 0 0;
+    padding-left: 1.4em;
+    font-size: clamp(1rem, 1.7vw, 1.25rem);
+    line-height: 1.5;
+  }
+  .row .detail-list li { margin-bottom: 6px; }
   .hf {
     display: flex;
     align-items: center;
@@ -239,7 +246,12 @@
     <div class="row">
       <div>
         <h3>Tank Insulation</h3>
-        <p class="detail">I designed and fabricated tank insulation on a budget of $7 using old aerogel from previous tanks, carefully resealing it in cryo-rated wrapping, and designed a rope system so that they could be removed immediately before launch while on the launch rail.</p>
+        <p class="detail">I designed and fabricated insulation for our cryogenic propellant tanks and overcame three main challenges:</p>
+        <ol class="detail-list">
+          <li><strong>Budget.</strong> I used predominantly existing aerogel and existing parts, and spent only $7 on styrofoam wrap.</li>
+          <li><strong>Containing the aerogel.</strong> Aerogel dust gets everywhere, so the insulation had to fully conceal the aerogel and keep the dust out of the lab space.</li>
+          <li><strong>Easy removal.</strong> The insulation had to come off easily with the rocket on the launch rail, after the tanks were filled and the rocket was hoisted.</li>
+        </ol>
       </div>
       <div class="media">
         <img src="tank-insulation.jpg" alt="Tank insulation">
