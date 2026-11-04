@@ -4,13 +4,16 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>UCI Rocket Project Liquids</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap">
 <style>
   html, body {
     margin: 0;
     padding: 0;
     background: #1C1C1E;
     color: #FFFFFF;
-    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-family: "Poppins", "Helvetica Neue", Helvetica, Arial, sans-serif;
   }
   .top {
     background: #0A1F44;
@@ -40,9 +43,24 @@
   h2 {
     margin: 0;
     padding: 32px 24px 8px;
-    font-size: clamp(3.5rem, 11vw, 9rem);
+    font-size: clamp(2.25rem, 6vw, 4.5rem);
     font-weight: 700;
-    line-height: 1;
+    line-height: 1.05;
+  }
+  .overview {
+    padding: 32px 24px 8px;
+  }
+  .overview p {
+    margin: 0;
+    max-width: 60ch;
+    font-size: clamp(1.25rem, 2.6vw, 1.9rem);
+    line-height: 1.4;
+  }
+  .role-line {
+    margin: 0;
+    padding: 8px 24px 12px;
+    font-size: clamp(1.25rem, 2.6vw, 1.9rem);
+    opacity: 0.8;
   }
   .row {
     display: grid;
@@ -109,14 +127,18 @@
     </nav>
   </header>
 
+  <section class="overview">
+    <p>[Project description overview]</p>
+  </section>
+
   <section class="hotfires">
     <h2>3 Hotfires</h2>
+    <p class="role-line">Testing role: Bottle operator</p>
 
     <div class="row">
       <div>
         <h3>Hotfire 1</h3>
         <p class="sub">March 2025</p>
-        <p class="detail">Testing role: [Role]</p>
       </div>
       <div class="video"><video src="hotfire-1.mp4" controls preload="metadata" playsinline></video></div>
     </div>
@@ -125,7 +147,6 @@
       <div>
         <h3>Hotfire 2</h3>
         <p class="sub">May 2025</p>
-        <p class="detail">Testing role: [Role]</p>
       </div>
       <div class="video"><video src="hotfire-2.mp4" controls preload="metadata" playsinline></video></div>
     </div>
@@ -134,7 +155,6 @@
       <div>
         <h3>Hotfire 3</h3>
         <p class="sub">December 2025</p>
-        <p class="detail">Testing role: [Role]</p>
       </div>
       <div class="video"><video src="hotfire-3.mp4" controls preload="metadata" playsinline></video></div>
     </div>
