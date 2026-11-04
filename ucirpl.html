@@ -40,15 +40,25 @@
     color: #FFFFFF;
     text-decoration: underline;
   }
+  .hotfires-head {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: baseline;
+    column-gap: 32px;
+    padding: 0 40px;
+  }
+  .hotfires-head h2 { padding: 32px 0 8px; }
+  .hotfires-head .role-line { padding: 0 0 8px; }
   h2 {
     margin: 0;
-    padding: 32px 24px 8px;
+    padding: 32px 40px 8px;
     font-size: clamp(2.25rem, 6vw, 4.5rem);
     font-weight: 700;
     line-height: 1.05;
   }
   .overview {
-    padding: 32px 24px 8px;
+    padding: 32px 40px 36px;
+    background: #26262A;
   }
   .overview .title {
     margin: 0 0 12px;
@@ -65,7 +75,7 @@
   }
   .role-line {
     margin: 0;
-    padding: 8px 24px 12px;
+    padding: 8px 40px 12px;
     font-size: clamp(1.25rem, 2.6vw, 1.9rem);
     opacity: 0.8;
   }
@@ -74,7 +84,7 @@
     grid-template-columns: 1fr minmax(0, 360px);
     gap: 24px;
     align-items: center;
-    padding: 12px 24px;
+    padding: 12px 40px;
   }
   .row h3 {
     margin: 0;
@@ -94,7 +104,7 @@
   .hf {
     display: flex;
     align-items: center;
-    padding: 12px 24px;
+    padding: 12px 40px;
   }
   .hf .date {
     margin: 0;
@@ -115,10 +125,10 @@
     width: 300px;
   }
   /* Staggered: each video's right edge sits 24px left of the left edge of the video below it */
-  .hf:nth-of-type(2) { padding-right: 348px; }
-  .hf:nth-of-type(1) { padding-right: 672px; }
+  .hf:nth-of-type(2) { padding-right: 364px; }
+  .hf:nth-of-type(1) { padding-right: 688px; }
   @media (max-width: 1400px) {
-    .hf:nth-of-type(1), .hf:nth-of-type(2) { padding-right: 24px; }
+    .hf:nth-of-type(1), .hf:nth-of-type(2) { padding-right: 40px; }
   }
   .video {
     aspect-ratio: 16 / 9;
@@ -147,7 +157,7 @@
     font-size: 1.25rem;
   }
   .design { padding-bottom: 48px; margin-top: 32px; background: #2A2A2D; }
-  .design .row { padding: 24px; }
+  .design .row { padding: 24px 40px; }
   .design .row > div:first-child { padding-right: 15%; }
 
   @media (max-width: 800px) {
@@ -186,8 +196,10 @@
   </section>
 
   <section class="hotfires">
-    <h2>3 Hotfires</h2>
-    <p class="role-line">Testing role: Bottle operator</p>
+    <div class="hotfires-head">
+      <h2>3 Hotfires</h2>
+      <p class="role-line">Testing role: Bottle operator</p>
+    </div>
 
     <div class="hf">
       <h3 class="date">March 2025</h3>
