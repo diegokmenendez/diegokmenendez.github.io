@@ -96,6 +96,18 @@
   .s1 .media, .s3 .media, .s5 .media { margin-left: 0; margin-right: auto; }
   .s2 .media, .s4 .media { margin-left: auto; margin-right: 0; }
   .media.portrait { width: 22%; }
+  .pubs {
+    list-style: none;
+    margin: 24px 0 0;
+    padding: 0;
+    max-width: 60ch;
+    font-size: clamp(1rem, 1.7vw, 1.25rem);
+    line-height: 1.5;
+  }
+  .pubs li { margin-bottom: 20px; }
+  .pubs .tag { display: block; opacity: 0.7; font-size: 0.85em; }
+  .pubs a { color: #FFFFFF; text-decoration: underline; font-weight: 500; }
+  .pubs .venue { display: block; opacity: 0.8; }
   .end { height: 64px; }
 
   @media (max-width: 800px) {
@@ -126,7 +138,7 @@
 
   <section class="overview">
     <h2 class="title">X Energy Lab - 2in Rotating Detonation Engine</h2>
-    <p>[Project description overview]</p>
+    <p>I took a 2in rotating detonation engine from an empty room to first hotfire. I owned the design, fabrication, testing, and integration of every component, from the engine itself to the facility around it. Since first hotfire, I have run the engine for various research projects.</p>
   </section>
 
   <section class="section s1">
@@ -156,6 +168,12 @@
   <section class="section s5">
     <h2>Presenting Our Work</h2>
     <p class="detail">[Description]</p>
+    <ul class="pubs">
+      <li><span class="tag">First-author presentation (oral)</span><a href="pub-iwdp-2026.pdf">Component and material failure mechanisms in miniaturized rotating detonation engines</a><span class="venue">International Workshop on Detonation for Propulsion (IWDP 2026), Yokohama, Japan, May 2026</span></li>
+      <li><span class="tag">First-author conference paper</span><a href="pub-scitech-2027-mapping.pdf">Mapping Material Responses and Failure Mechanisms for a Heat-Sink Rotating Detonation Engine</a><span class="venue">AIAA SciTech Forum 2027 (abstract accepted)</span></li>
+      <li><span class="tag">Co-author conference paper</span><a href="pub-scitech-2027-microstructure.pdf">Microstructural Influence on Material Degradation in a Rotating Detonation Engine</a><span class="venue">AIAA SciTech Forum 2027 (abstract accepted)</span></li>
+      <li><span class="tag">Co-author conference paper</span><a href="pub-scitech-2027-vibratory.pdf">Experimental Investigation into the Thermomechanical Vibratory Response of Uncooled Rotating Detonation Engine Combustor Liners</a><span class="venue">AIAA SciTech Forum 2027 (abstract accepted)</span></li>
+    </ul>
     <div class="media"><img src="rde-presenting.jpg" alt="Presenting our work"></div>
   </section>
 
