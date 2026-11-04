@@ -60,7 +60,15 @@
   }
   .section {
     padding: 48px 40px 0;
+    display: grid;
+    gap: 40px;
+    align-items: center;
   }
+  /* Image left: text right. Image right: text left. */
+  .s1, .s3, .s5 { grid-template-columns: 38% minmax(0, 1fr); }
+  .s3 { grid-template-columns: 22% minmax(0, 1fr); }
+  .s2, .s4, .s6 { grid-template-columns: minmax(0, 1fr) 38%; }
+  .s1 .media, .s3 .media, .s5 .media { order: -1; }
   .section h2 {
     margin: 0;
     font-size: clamp(1.75rem, 4vw, 3rem);
@@ -75,8 +83,8 @@
   }
   .section .detail + .detail { margin-top: 12px; }
   .media {
-    margin-top: 24px;
-    width: 38%;
+    margin: 0;
+    width: 100%;
   }
   .media img,
   .media video {
@@ -94,9 +102,6 @@
     font-size: 1.25rem;
   }
   /* Images alternate between the left edge and the right edge */
-  .s1 .media, .s3 .media, .s5 .media { margin-left: 0; margin-right: auto; }
-  .s2 .media, .s4 .media, .s6 .media { margin-left: auto; margin-right: 0; }
-  .media.portrait { width: 22%; }
   .pubs {
     list-style: none;
     margin: 24px 0 0;
@@ -112,7 +117,8 @@
   .end { height: 64px; }
 
   @media (max-width: 800px) {
-    .media, .media.portrait { width: 100%; margin-left: 0; }
+    .section, .s1, .s2, .s3, .s4, .s5, .s6 { grid-template-columns: minmax(0, 1fr); gap: 24px; }
+    .s1 .media, .s3 .media, .s5 .media { order: 0; }
   }
   .footer {
     background: #0A1F44;
@@ -143,36 +149,52 @@
   </section>
 
   <section class="section s1">
+    <div class="text">
     <h2>Initial Design</h2>
     <p class="detail">In February 2025, I was tasked with adapting an Air Force Research Lab rotating detonation engine design for our lab. I scaled the engine down to a 2in design, including the injector, manifolding, and feed interfaces, and redesigned the sealing mechanism to suit our facility.</p>
+    
+    </div>
     <div class="media"><img src="rde-initial-design.png" alt="Exploded view of the RDE: ignitor ring, innerbody testing coupon, outerbody, injector rings, manifold"></div>
   </section>
 
   <section class="section s2">
+    <div class="text">
     <h2>Facility Design</h2>
     <p class="detail">We began with no facility capable of hotfiring an engine. I designed the facility from scratch: the feed system, data acquisition, igniter system, engine control system, and the in-room gas supply, along with every supporting component. I then built each component, tested it, and integrated it into the full system.</p>
+    
+    </div>
     <div class="media"><img src="rde-facility.jpg" alt="RDE test facility"></div>
   </section>
 
   <section class="section s3">
+    <div class="text">
     <h2>First Hotfire</h2>
     <p class="detail">Before firing, I ran a nitrogen flow testing campaign on the engine to validate the feed system and flow behavior. That campaign led to our first hotfire and a successful detonation.</p>
+    
+    </div>
     <div class="media portrait"><video src="rde-clip-2.mp4" autoplay muted loop preload="auto" playsinline></video></div>
   </section>
 
   <section class="section s4">
+    <div class="text">
     <h2>Collecting Data</h2>
     <p class="detail">We have since expanded our diagnostics to include laser Doppler vibrometry, high-speed imaging, and chamber pressure measurement. Next, we plan to add direct optical imaging of the detonation through a quartz outer body.</p>
+    
+    </div>
     <div class="media"><video src="rde-clip-1.mp4" autoplay muted loop preload="auto" playsinline></video></div>
   </section>
 
   <section class="section s5">
+    <div class="text">
     <h2>1D Thermal Modeling</h2>
     <p class="detail">I created a simplified 1D thermal model to assess how we can expect different materials to fail. This model was then calibrated to real testing data, and it gives an insight into the chamber conditions that we would not otherwise have.</p>
+    
+    </div>
     <div class="media"><img src="rde-thermal-model.png" alt="Transient radial temperature profiles for copper, Inconel 625, Ti-6Al-4V, and tungsten"></div>
   </section>
 
   <section class="section s6">
+    <div class="text">
     <h2>Presenting Our Work</h2>
     <p class="detail">The focus of this research has been investigating how materials respond and fail in the extreme thermomechanical loading environment of a rotating detonation engine. The future plan is to design new materials that can withstand that environment.</p>
     <p class="detail">This work has produced one first-author presentation, one first-author conference paper, and two co-authored conference papers. Links below.</p>
@@ -182,6 +204,8 @@
       <li><span class="tag">Co-author conference paper</span><a href="pub-scitech-2027-microstructure.pdf">Microstructural Influence on Material Degradation in a Rotating Detonation Engine</a><span class="venue">AIAA SciTech Forum 2027 (abstract accepted)</span></li>
       <li><span class="tag">Co-author conference paper</span><a href="pub-scitech-2027-vibratory.pdf">Experimental Investigation into the Thermomechanical Vibratory Response of Uncooled Rotating Detonation Engine Combustor Liners</a><span class="venue">AIAA SciTech Forum 2027 (abstract accepted)</span></li>
     </ul>
+    
+    </div>
     <div class="media"><img src="rde-presenting.jpg" alt="Presenting our work"></div>
   </section>
 
