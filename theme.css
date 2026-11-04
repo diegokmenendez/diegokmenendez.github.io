@@ -234,3 +234,116 @@ html.js .reveal.in { opacity: 1; transform: none; }
   html.js .reveal { opacity: 1; transform: none; transition: none; }
   .panel .bg, .panel::before, .panel::after { transition: none; }
 }
+
+/* =====================================================================
+   v2 refinements (appended). Delete everything from this line down to
+   return to the v1 look.
+   ===================================================================== */
+:root { --text: #F2F4F8; --muted: rgba(242, 244, 248, 0.72); }
+html { scroll-padding-top: 72px; }
+body { color: var(--text); -webkit-font-smoothing: antialiased; text-rendering: optimizeLegibility; }
+::selection { background: var(--accent); color: #0A1F44; }
+a:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; border-radius: 3px; }
+
+/* Text contrast and body scale */
+.cap { color: var(--muted); font-size: 0.85rem; }
+.pubs .tag, .pubs .venue { opacity: 1; color: var(--muted); font-size: 0.8rem; }
+.row .sub, .role-line { opacity: 1; color: var(--muted); }
+.section .detail, .row .detail, .row .detail-list, .overview p {
+  font-size: clamp(1rem, 1.3vw, 1.125rem);
+  line-height: 1.65;
+}
+
+/* Bar */
+.bar { padding-top: 10px; padding-bottom: 10px; }
+.bar-links { font-size: 0.9rem; }
+.bar .brand { font-size: 1rem; }
+
+/* Home hero */
+h1 { letter-spacing: -0.02em; line-height: 1.05; padding: clamp(56px, 8vw, 96px) 24px 12px; }
+.tagline {
+  max-width: 60ch;
+  margin: 0 auto;
+  padding: 0 24px clamp(36px, 5vw, 64px);
+  font-size: clamp(0.95rem, 1.4vw, 1.125rem);
+  color: var(--muted);
+  letter-spacing: 0.01em;
+}
+
+/* Home cards */
+.panel { aspect-ratio: 4 / 5; }
+.panel::before {
+  background: linear-gradient(to top, rgba(5, 12, 28, 0.88) 0%, rgba(5, 12, 28, 0.35) 55%, rgba(5, 12, 28, 0.15) 100%);
+}
+.panel:hover::before { background: linear-gradient(to top, rgba(5, 12, 28, 0.8) 0%, rgba(5, 12, 28, 0.22) 55%, rgba(5, 12, 28, 0.08) 100%); }
+.panel span {
+  top: auto;
+  bottom: clamp(24px, 4vw, 48px);
+  transform: none;
+  text-align: left;
+  left: clamp(24px, 4vw, 48px);
+  right: 24px;
+  font-size: clamp(1.5rem, 3vw, 2.5rem);
+  line-height: 1.1;
+  letter-spacing: -0.01em;
+}
+.panel span small {
+  font-family: var(--mono);
+  font-size: 0.8rem;
+  font-weight: 500;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin-top: 12px;
+}
+
+/* Section rhythm */
+.section h2::before, .design .row h3::before { font-size: 0.75rem; margin-bottom: 14px; }
+.section { padding-top: clamp(56px, 7vw, 96px); padding-bottom: clamp(24px, 3vw, 40px); }
+.overview + .section { padding-top: clamp(40px, 5vw, 64px); }
+.section h2 { letter-spacing: -0.015em; }
+.section h2::after, .design .row h3::after { margin-top: 16px; margin-bottom: 8px; }
+.section .detail + .detail { margin-top: 16px; }
+
+/* UCIRPL hierarchy */
+.hotfires-head h2, .design > h2 {
+  font-size: clamp(1.75rem, 3.6vw, 2.75rem);
+  font-weight: 600;
+  letter-spacing: -0.015em;
+}
+.hotfires-head .role-line { font-size: clamp(1rem, 1.6vw, 1.25rem); }
+.design > h2 { padding-top: clamp(32px, 5vw, 56px); }
+.design .row { padding-top: 28px; padding-bottom: 28px; }
+.design .row + .row { border-top: 1px solid var(--line); }
+.design .row + .row { margin-left: var(--g); margin-right: var(--g); padding-left: 0; padding-right: 0; }
+.row h3 { font-weight: 600; }
+
+/* Media framing (no cropping) */
+.media img, .media video, .video { border-radius: 10px; box-shadow: 0 12px 32px -12px rgba(0, 0, 0, 0.6); }
+.media.card img { padding: 18px; }
+
+/* Publications */
+.pub-group { margin-top: 32px; padding-top: 16px; border-top: 1px solid var(--line); font-size: 0.78rem; letter-spacing: 0.14em; }
+.pubs li { margin-bottom: 24px; padding-left: 14px; border-left: 2px solid var(--accent-soft); transition: border-color 0.2s; }
+.pubs li:hover { border-left-color: var(--accent); }
+.pubs a { font-weight: 500; line-height: 1.35; }
+.pubs .tag { margin-bottom: 4px; }
+.pubs .venue { margin-top: 6px; }
+
+/* Footer */
+.footer { border-top: 1px solid var(--line); padding: 32px var(--g); gap: 28px; font-size: 0.9rem; }
+.footer a { color: var(--muted); text-decoration: none; border-bottom: 1px solid transparent; transition: color 0.2s, border-color 0.2s; }
+.footer a:hover { color: var(--accent); border-bottom-color: var(--accent); }
+
+/* Mobile */
+@media (max-width: 700px) { .panel { aspect-ratio: 4 / 3; } }
+@media (max-width: 800px) {
+  :root { --g: max(20px, calc((100% - 1200px) / 2)); }
+  .bar { padding: 10px 20px; gap: 8px 16px; }
+  .bar-links, .bar-home .bar-links { width: 100%; justify-content: space-between; font-size: 0.88rem; gap: 6px 12px; }
+  .bar-links a.btn { padding: 5px 12px; }
+  .section, .overview, .hotfires-head, .design > h2, .design .row, .timeline { padding-left: 20px; padding-right: 20px; }
+  .design .row + .row { margin-left: 0; margin-right: 0; padding-left: 20px; padding-right: 20px; }
+  .section::before { left: 20px; right: 20px; }
+  .section h2::after, .design .row h3::after { width: 40px; }
+}
