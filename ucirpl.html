@@ -36,30 +36,32 @@
   }
   h2 {
     margin: 0;
-    padding: 24px 24px 8px;
-    font-size: 1.75rem;
-    font-weight: 600;
+    padding: 32px 24px 8px;
+    font-size: clamp(3.5rem, 11vw, 9rem);
+    font-weight: 700;
+    line-height: 1;
   }
-  .hotfire {
+  .row {
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 1fr minmax(0, 360px);
     gap: 24px;
     align-items: center;
-    padding: 24px;
+    padding: 12px 24px;
   }
-  .hotfire h3 {
+  .row h3 {
     margin: 0;
-    font-size: 1.5rem;
+    font-size: clamp(1.75rem, 4vw, 3rem);
     font-weight: 600;
+    line-height: 1.1;
   }
-  .hotfire .date {
-    margin: 4px 0 0;
-    font-size: 1.1rem;
+  .row .sub {
+    margin: 8px 0 0;
+    font-size: clamp(1.25rem, 2.6vw, 1.9rem);
     opacity: 0.8;
   }
-  .hotfire .role {
-    margin: 16px 0 0;
-    font-size: 1.1rem;
+  .row .detail {
+    margin: 12px 0 0;
+    font-size: clamp(1.25rem, 2.6vw, 1.9rem);
   }
   .video {
     aspect-ratio: 16 / 9;
@@ -71,24 +73,27 @@
     display: block;
     object-fit: contain;
   }
-  .design {
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    gap: 24px;
-    padding: 24px;
+  .media img {
+    display: block;
+    width: 100%;
+    height: auto;
   }
-  .design .item {
-    aspect-ratio: 1 / 1;
+  .media img + img {
+    margin-top: 12px;
+  }
+  .ph {
+    aspect-ratio: 4 / 3;
     background: #566B96;
     display: flex;
     align-items: center;
     justify-content: center;
-    font-size: 1.1rem;
+    font-size: 1.25rem;
   }
+  .design { padding-bottom: 48px; }
+  .design .row { padding: 24px; }
 
-  @media (max-width: 700px) {
-    .hotfire { grid-template-columns: 1fr; }
-    .design { grid-template-columns: 1fr; }
+  @media (max-width: 800px) {
+    .row { grid-template-columns: minmax(0, 1fr); }
   }
 </style>
 </head>
@@ -99,41 +104,68 @@
     <a href="#">Resume (PDF)</a>
   </nav>
 
-  <h2>3 Hotfires</h2>
+  <section class="hotfires">
+    <h2>3 Hotfires</h2>
 
-  <section class="hotfire">
-    <div>
-      <h3>Hotfire 1</h3>
-      <p class="date">March 2025</p>
-      <p class="role">Testing role: [Role]</p>
+    <div class="row">
+      <div>
+        <h3>Hotfire 1</h3>
+        <p class="sub">March 2025</p>
+        <p class="detail">Testing role: [Role]</p>
+      </div>
+      <div class="video"><video src="hotfire-1.mp4" controls preload="metadata" playsinline></video></div>
     </div>
-    <div class="video"><video src="hotfire-1.mp4" controls preload="metadata" playsinline></video></div>
-  </section>
 
-  <section class="hotfire">
-    <div>
-      <h3>Hotfire 2</h3>
-      <p class="date">May 2025</p>
-      <p class="role">Testing role: [Role]</p>
+    <div class="row">
+      <div>
+        <h3>Hotfire 2</h3>
+        <p class="sub">May 2025</p>
+        <p class="detail">Testing role: [Role]</p>
+      </div>
+      <div class="video"><video src="hotfire-2.mp4" controls preload="metadata" playsinline></video></div>
     </div>
-    <div class="video"><video src="hotfire-2.mp4" controls preload="metadata" playsinline></video></div>
-  </section>
 
-  <section class="hotfire">
-    <div>
-      <h3>Hotfire 3</h3>
-      <p class="date">December 2025</p>
-      <p class="role">Testing role: [Role]</p>
+    <div class="row">
+      <div>
+        <h3>Hotfire 3</h3>
+        <p class="sub">December 2025</p>
+        <p class="detail">Testing role: [Role]</p>
+      </div>
+      <div class="video"><video src="hotfire-3.mp4" controls preload="metadata" playsinline></video></div>
     </div>
-    <div class="video"><video src="hotfire-3.mp4" controls preload="metadata" playsinline></video></div>
   </section>
-
-  <h2>Design Work</h2>
 
   <section class="design">
-    <div class="item">[Design item 1]</div>
-    <div class="item">[Design item 2]</div>
-    <div class="item">[Design item 3]</div>
+    <h2>Design Work</h2>
+
+    <div class="row">
+      <div>
+        <h3>[Design item 1]</h3>
+        <p class="detail">[Description]</p>
+      </div>
+      <div class="media">
+        <img src="old-injector.jpg" alt="Old injector">
+        <img src="new-injector.jpg" alt="New injector">
+      </div>
+    </div>
+
+    <div class="row">
+      <div>
+        <h3>[Design item 2]</h3>
+        <p class="detail">[Description]</p>
+      </div>
+      <div class="media">
+        <img src="tank-insulation.jpg" alt="Tank insulation">
+      </div>
+    </div>
+
+    <div class="row">
+      <div>
+        <h3>[Design item 3]</h3>
+        <p class="detail">[Description]</p>
+      </div>
+      <div class="ph">[Image placeholder]</div>
+    </div>
   </section>
 </body>
 </html>
