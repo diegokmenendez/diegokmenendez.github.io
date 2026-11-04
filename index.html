@@ -26,6 +26,29 @@
     color: inherit;
     text-decoration: none;
   }
+  .tagline {
+    margin: 0;
+    padding: 0 24px 20px;
+    text-align: center;
+    font-size: 1.1rem;
+    line-height: 1.4;
+  }
+  .about {
+    padding: 48px 24px 64px;
+    max-width: 70ch;
+    margin: 0 auto;
+    text-align: center;
+  }
+  .about h2 {
+    margin: 0 0 16px;
+    font-size: 2rem;
+    font-weight: 600;
+  }
+  .about p {
+    margin: 0;
+    font-size: 1.25rem;
+    line-height: 1.5;
+  }
   .links {
     display: flex;
     justify-content: center;
@@ -89,6 +112,7 @@
 </head>
 <body>
   <h1><a href="./">Diego Kiyoshi Menendez</a></h1>
+  <p class="tagline">Aerospace Undergrad | Rotating Detonation Engines &amp; Combustor Materials @ X Energy Lab | UC Irvine Summer 27</p>
   <nav class="links">
     <a href="https://www.linkedin.com/in/diegokmenendez">LinkedIn</a>
     <a href="resume.pdf">Resume (PDF)</a>
@@ -97,5 +121,9 @@
     <a class="panel" id="rde" href="rde.html"><span>X Energy Lab - 2in Rotating Detonation Engine</span></a>
     <a class="panel" id="ucirpl" href="ucirpl.html"><span>UCI Rocket Project Liquids - MOCH4</span></a>
   </div>
+  <section class="about">
+    <h2>About Me</h2>
+    <p>Current research focus on rotating detonation engines, cellular detonation physics, and combustor wall materials. Leading the experimental RDE project at X Energy Lab, funded through an NSF DMREF grant.</p>
+  </section>
 </body>
 </html>
