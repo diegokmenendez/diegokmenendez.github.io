@@ -84,6 +84,28 @@
     margin: 12px 0 0;
     font-size: clamp(1.25rem, 2.6vw, 1.9rem);
   }
+  .hf {
+    display: flex;
+    align-items: center;
+    padding: 12px 24px;
+  }
+  .hf .date {
+    margin: 0;
+    font-size: clamp(1.75rem, 4vw, 3rem);
+    font-weight: 600;
+    line-height: 1.1;
+    white-space: nowrap;
+  }
+  .hf .line {
+    flex: 1;
+    height: 1px;
+    background: #FFFFFF;
+    margin-left: 24px;
+  }
+  .hf .video {
+    flex: none;
+    width: 360px;
+  }
   .video {
     aspect-ratio: 16 / 9;
     background: #000000;
@@ -115,6 +137,9 @@
 
   @media (max-width: 800px) {
     .row { grid-template-columns: minmax(0, 1fr); }
+    .hf { flex-direction: column; align-items: stretch; gap: 12px; }
+    .hf .line { display: none; }
+    .hf .video { width: 100%; }
   }
 </style>
 </head>
@@ -135,27 +160,21 @@
     <h2>3 Hotfires</h2>
     <p class="role-line">Testing role: Bottle operator</p>
 
-    <div class="row">
-      <div>
-        <h3>Hotfire 1</h3>
-        <p class="sub">March 2025</p>
-      </div>
+    <div class="hf">
+      <h3 class="date">March 2025</h3>
+      <div class="line"></div>
       <div class="video"><video src="hotfire-1.mp4" controls preload="metadata" playsinline></video></div>
     </div>
 
-    <div class="row">
-      <div>
-        <h3>Hotfire 2</h3>
-        <p class="sub">May 2025</p>
-      </div>
+    <div class="hf">
+      <h3 class="date">May 2025</h3>
+      <div class="line"></div>
       <div class="video"><video src="hotfire-2.mp4" controls preload="metadata" playsinline></video></div>
     </div>
 
-    <div class="row">
-      <div>
-        <h3>Hotfire 3</h3>
-        <p class="sub">December 2025</p>
-      </div>
+    <div class="hf">
+      <h3 class="date">December 2025</h3>
+      <div class="line"></div>
       <div class="video"><video src="hotfire-3.mp4" controls preload="metadata" playsinline></video></div>
     </div>
   </section>
