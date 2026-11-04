@@ -351,3 +351,9 @@ h1 { letter-spacing: -0.02em; line-height: 1.05; padding: clamp(56px, 8vw, 96px)
 
 /* Captions hidden for consistency (UCIRPL has none). Delete this rule to show them on the RDE page again. */
 .cap { display: none; }
+
+/* Home: keep project titles visible on first load. Delete this block to undo. */
+h1 { padding-top: clamp(28px, 3.5vw, 48px); }
+.tagline { padding-bottom: clamp(20px, 2.5vw, 32px); }
+.panel { aspect-ratio: auto; height: clamp(420px, calc(100svh - 240px), 760px); }
+@media (max-width: 700px) { .panel { height: auto; aspect-ratio: 4 / 3; } }
