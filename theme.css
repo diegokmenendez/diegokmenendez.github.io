@@ -348,3 +348,6 @@ h1 { letter-spacing: -0.02em; line-height: 1.05; padding: clamp(56px, 8vw, 96px)
   .section::before { left: 20px; right: 20px; }
   .section h2::after, .design .row h3::after { width: 40px; }
 }
+
+/* Captions hidden for consistency (UCIRPL has none). Delete this rule to show them on the RDE page again. */
+.cap { display: none; }
