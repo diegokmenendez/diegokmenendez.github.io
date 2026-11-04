@@ -83,11 +83,9 @@
     justify-content: center;
     font-size: 1.25rem;
   }
-  /* Images step from left to right down the page */
-  .s1 .media { margin-left: 0; }
-  .s2 .media { margin-left: 20.66%; }
-  .s3 .media { margin-left: 41.33%; }
-  .s4 .media { margin-left: 62%; }
+  /* Images alternate between the left edge and the right edge */
+  .s1 .media, .s3 .media { margin-left: 0; margin-right: auto; }
+  .s2 .media, .s4 .media { margin-left: auto; margin-right: 0; }
   .s2 .media.portrait { width: 22%; }
   .end { height: 64px; }
 
