@@ -107,6 +107,12 @@
     flex: none;
     width: 360px;
   }
+  /* Staggered: each video's right edge sits 24px left of the left edge of the video below it */
+  .hf:nth-of-type(2) { padding-right: 408px; }
+  .hf:nth-of-type(1) { padding-right: 792px; }
+  @media (max-width: 1250px) {
+    .hf:nth-of-type(1), .hf:nth-of-type(2) { padding-right: 24px; }
+  }
   .video {
     aspect-ratio: 16 / 9;
     background: #000000;
@@ -148,8 +154,8 @@
   <header class="top">
     <h1><a href="./">Diego Kiyoshi Menendez</a></h1>
     <nav class="links">
-      <a href="#">LinkedIn</a>
-      <a href="#">Resume (PDF)</a>
+      <a href="https://www.linkedin.com/in/diegokmenendez">LinkedIn</a>
+      <a href="resume.pdf">Resume (PDF)</a>
     </nav>
   </header>
 
