@@ -125,10 +125,10 @@
     width: 300px;
   }
   /* Staggered: each video's right edge sits 24px left of the left edge of the video below it */
-  .hf:nth-of-type(2) { padding-right: 364px; }
-  .hf:nth-of-type(1) { padding-right: 688px; }
+  .hf:nth-last-of-type(2) { padding-right: 364px; }
+  .hf:nth-last-of-type(3) { padding-right: 688px; }
   @media (max-width: 1400px) {
-    .hf:nth-of-type(1), .hf:nth-of-type(2) { padding-right: 40px; }
+    .hf:nth-last-of-type(2), .hf:nth-last-of-type(3) { padding-right: 40px; }
   }
   .video {
     aspect-ratio: 16 / 9;
