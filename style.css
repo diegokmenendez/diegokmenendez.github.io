@@ -344,3 +344,14 @@ a.pub-title:hover { text-decoration: underline; text-underline-offset: 3px; }
 .music-cols h2 { font-size: 20px; font-weight: 700; line-height: 1.2; margin: 0 0 16px; }
 .music-cols .col-side { padding-left: 28px; border-left: 1px solid #000; }
 @media (max-width: 760px) { .prose.music-cols { display: block; } .music-cols .col-side { padding: 24px 0 0; margin-top: 32px; border-left: 0; border-top: 1px solid #000; } }
+
+/* Pedagogy posts */
+.post p { max-width: 760px; }
+.post { padding: 28px 0; border-bottom: 1px solid #000; }
+.post:first-child { padding-top: 0; }
+.post h2 { font-size: 28px; line-height: 1.15; margin: 0 0 12px; }
+.post h2 a { text-decoration: none; color: inherit; }
+.post h2 a:hover { text-decoration: underline; text-underline-offset: 4px; }
+.post p { margin: 0 0 14px; }
+.post .post-more { margin: 0; }
+.posts-intro { max-width: 760px; margin: 0 0 40px; font-size: 20px; line-height: 1.5; }
