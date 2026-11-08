@@ -216,6 +216,14 @@ a.pub-title:hover { text-decoration: underline; text-underline-offset: 3px; }
 .prose .inset-left { float: left; width: 260px; margin: 4px 32px 16px 0; }
 .prose .crop img { aspect-ratio: 3 / 4; object-fit: cover; object-position: center 35%; }
 .prose::after { content: ""; display: block; clear: both; }
+/* Music page */
+.prose .photo-row { margin: 32px 0 0; }
+.photo-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; }
+.photo-grid img { display: block; width: 100%; aspect-ratio: 4 / 3; object-fit: cover; border: 1px solid currentColor; }
+.photo-row figcaption { margin-top: 10px; font-size: 15px; color: #444; }
+.music-lead { font-size: 20px; line-height: 1.5; }
+.prose .music-links { display: flex; flex-wrap: wrap; gap: 12px 28px; margin: 24px 0 0; }
+
 .essay { max-width: 760px; padding-bottom: 40px; }
 .essay h2 { margin-bottom: 16px; }
 .essay p { margin: 0; }
@@ -301,6 +309,7 @@ a.pub-title:hover { text-decoration: underline; text-underline-offset: 3px; }
 .tile:hover .tile-arrow, .tile:focus-visible .tile-arrow { transform: translateX(8px); }
 
 @media (max-width: 760px) {
+  .photo-grid { grid-template-columns: 1fr; }
   .prose .inset-left { float: none; width: 60%; max-width: 260px; margin: 0 0 24px; }
   .prose .side { float: none; width: 100%; margin: 0 0 24px; }
   .prose .inset-right { float: none; width: 60%; max-width: 260px; margin: 0 0 24px; }
@@ -321,3 +330,17 @@ a.pub-title:hover { text-decoration: underline; text-underline-offset: 3px; }
   .logo-box { flex-direction: column; align-items: flex-start; gap: 16px; padding: 0; }
   .side { position: static; order: -1; }
 }
+
+/* Favorites box */
+.prose .listen-intro { font-size: 20px; font-weight: 700; line-height: 1.2; margin: 0; }
+.prose .listen-sub { font-size: 15px; color: #444; margin: 4px 0 20px; padding-bottom: 16px; border-bottom: 1px solid #000; }
+.listen ul { list-style: none; margin: 0; padding: 0; }
+.listen li { margin: 0 0 16px; font-size: 16px; line-height: 1.45; }
+.listen li a { color: inherit; text-decoration: underline; text-underline-offset: 3px; text-decoration-thickness: 1px; }
+.listen li a:hover { text-decoration-thickness: 2px; }
+
+/* Two columns */
+.prose.music-cols { display: grid; grid-template-columns: 1fr 400px; gap: 48px; margin-top: 40px; align-items: start; }
+.music-cols h2 { font-size: 20px; font-weight: 700; line-height: 1.2; margin: 0 0 16px; }
+.music-cols .col-side { padding-left: 28px; border-left: 1px solid #000; }
+@media (max-width: 760px) { .prose.music-cols { display: block; } .music-cols .col-side { padding: 24px 0 0; margin-top: 32px; border-left: 0; border-top: 1px solid #000; } }
