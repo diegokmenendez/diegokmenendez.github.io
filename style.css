@@ -125,7 +125,7 @@ h3 { font-size: 20px; font-weight: 600; margin: 0 0 8px; letter-spacing: -0.01em
 .pub-title { font-weight: 600; }
 a.pub-title { text-decoration: none; width: fit-content; max-width: 100%; }
 #publications a.pub-title:focus-visible { outline-offset: 2px; }
-a.pub-title::after { content: " \2197"; content: " \2197" / ""; }
+a.pub-title::after { content: " \2197\FE0E"; content: " \2197\FE0E" / ""; }
 a.pub-title:hover { text-decoration: underline; text-underline-offset: 3px; }
 .pub-authors, .pub-venue { font-size: 15px; }
 .pub-authors { color: #444; }
@@ -134,7 +134,7 @@ a.pub-title:hover { text-decoration: underline; text-underline-offset: 3px; }
 .research p { margin: 0; }
 .side { font-size: 17px; font-weight: 500; display: flex; flex-direction: column; gap: 0; border-top: 1px solid #000; }
 .side a { display: flex; justify-content: space-between; gap: 16px; padding: 14px 16px; border-bottom: 1px solid #000; text-decoration: none; transition: background 0.2s ease, color 0.2s ease, padding 0.2s ease; }
-.side a::after { content: "\2192"; content: "\2192" / ""; }
+.side a::after { content: "\2192\FE0E"; content: "\2192\FE0E" / ""; }
 .side a:hover, .side a:focus-visible { background: #000; color: #fff; padding-inline: 24px; }
 
 /* Research layout: side links sit beside the overview, projects use the full width */
@@ -191,7 +191,7 @@ a.pub-title:hover { text-decoration: underline; text-underline-offset: 3px; }
 .page-intro { margin: 0; font-size: 20px; line-height: 1.5; text-wrap: balance; }
 .page-top.has-media { display: grid; grid-template-columns: 1fr 360px; column-gap: 48px; align-items: end; }
 .page-top-media { margin: 0; }
-.page-top-media img { display: block; width: 100%; aspect-ratio: 3 / 2; object-fit: cover; border: 1px solid currentColor; }
+.page-top-media img { display: block; width: 100%; aspect-ratio: 3 / 2; object-fit: cover; }
 /* Story pages (e.g. Henry Miller): text beside media, using the project layout */
 .story { margin-bottom: 56px; }
 /* Henry Miller: one continuous story, pictures woven in */
@@ -219,7 +219,7 @@ a.pub-title:hover { text-decoration: underline; text-underline-offset: 3px; }
 /* Music page */
 .prose .photo-row { margin: 32px 0 0; }
 .photo-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; }
-.photo-grid img { display: block; width: 100%; aspect-ratio: 4 / 3; object-fit: cover; border: 1px solid currentColor; }
+.photo-grid img { display: block; width: 100%; aspect-ratio: 4 / 3; object-fit: cover; }
 .photo-row figcaption { margin-top: 10px; font-size: 15px; color: #444; }
 .music-lead { font-size: 20px; line-height: 1.5; }
 .prose .music-links { display: flex; flex-wrap: wrap; gap: 12px 28px; margin: 24px 0 0; }
